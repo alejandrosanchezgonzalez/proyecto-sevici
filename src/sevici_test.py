@@ -1,14 +1,10 @@
 from sevici import *
-"""""
+
 def test_lee_estaciones(estaciones):
     print("Las tres primeras son :")
     for estacion in estaciones[:3]:
         print(estacion)
 
-if __name__ == "__main__":
-    estaciones = lee_estaciones("data\estaciones.csv")
-    test_lee_estaciones(estaciones)
-"""""
 def test_estaciones_bicis_libres(estaciones):
     for k in [5, 10, 1]:
         resultado = estaciones_bicis_libres(estaciones, k)
@@ -16,9 +12,7 @@ def test_estaciones_bicis_libres(estaciones):
         for r in resultado[:5]:
             print(r)
 
-if __name__ == "__main__":
-    estaciones = lee_estaciones("data\estaciones.csv")
-    test_estaciones_bicis_libres(estaciones)
+
 
 def test_estaciones_cercanas(estaciones):
     punto = Coordenadas(37.357659, -5.9863)
@@ -31,3 +25,5 @@ def test_estaciones_cercanas(estaciones):
 if __name__ == "__main__":
     estaciones = lee_estaciones("data\estaciones.csv")
     test_estaciones_cercanas(estaciones)
+    test_estaciones_bicis_libres(estaciones)
+    test_lee_estaciones(estaciones)

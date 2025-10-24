@@ -24,8 +24,8 @@ def lee_estaciones(fichero):
 def estaciones_bicis_libres(estaciones, k=5):
     resultado = []
     for e in estaciones:
-        if e.bicicletas >= k:
-            resultado.append((e.bicicletas, e.nombre.split('_'), e.ubicacion))
+        if e.bornetas_vacias >= k:
+            resultado.append((e.bornetas_vacias, e.nombre.split('_'), e.ubicacion))
     resultado.sort(reverse=True)
     return resultado
 
@@ -36,8 +36,8 @@ def calcula_distancia(coordenadas1, coordenadas2):
 def estaciones_cercanas(estaciones, coordenadas, k=5):
     cercanas = []
     for e in estaciones:
-        if e.bicicletas > 0:
+        if e.bornetas_vacias > 0:
             dist = calcula_distancia(coordenadas, e.ubicacion)
-            cercanas.append((dist, e.nombre, e.bicicletas))
+            cercanas.append((dist, e.nombre, e.bornetas_vacias))
     cercanas.sort(key=lambda x: x[0])
     return cercanas[:k]
